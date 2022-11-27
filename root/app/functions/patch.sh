@@ -14,3 +14,10 @@ if [ "$(cat "/data/venv/.pcxversion")" = "1" ]; then
     mkdir -p /data/venv
     echo "2" >"/data/venv/.pcxversion"
 fi
+
+# Python 3.10, remove 3.9 dependencies
+if [ "$(cat "/data/venv/.pcxversion")" = "2" ]; then
+    rm -rf /data/venv
+    mkdir -p /data/venv
+    echo "3" >"/data/venv/.pcxversion"
+fi
